@@ -1,0 +1,4 @@
+CREATE TABLE good(
+ good_id INT NOT NULL AUTO_INCREMENT,
+ good_price INT NOT NULL,
+ PRIMARY KEY (good_id));
