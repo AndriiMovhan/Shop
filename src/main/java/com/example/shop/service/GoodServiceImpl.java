@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -30,13 +31,14 @@ public class GoodServiceImpl implements GoodService {
     }
 
     @Override
-    public Good save(Good good) {
-        return goodRepository.save(good);
+    @Transactional
+    public GoodDto save(GoodDto goodDto) {
+        return goodMapper.toDto(goodRepository.save(goodMapper.toEntity(goodDto)));
     }
 
     @Override
-    public Good update(Good id) {
-        return goodRepository.save(id);
+    public GoodDto update(GoodDto id) {
+       return goodMapper.toDto(goodRepository.save(goodMapper.toEntity(id)));
     }
 
     @Override

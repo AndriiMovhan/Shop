@@ -27,13 +27,13 @@ public class GoodController {
     }
 
     @PostMapping("/goods")
-    public ResponseEntity<Good> save(@RequestBody Good good) {
-        return ResponseEntity.ok(goodService.save(good));
+    public ResponseEntity<GoodDto> save(@RequestBody GoodDto goodDto) {
+        return ResponseEntity.ok(goodService.save(goodDto));
     }
 
     @PutMapping("/goods")
-    public ResponseEntity<Good> update(@RequestBody Good good) {
-        return ResponseEntity.ok(goodService.update(good));
+    public ResponseEntity<GoodDto> update(@RequestBody GoodDto goodDto) {
+        return ResponseEntity.ok(goodService.update(goodDto));
     }
 
     @DeleteMapping("/goods/{id}")

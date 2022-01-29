@@ -11,9 +11,9 @@ public interface GoodService {
 
     List<GoodDto> findById(String id);
 
-    Good save(Good good);
+    GoodDto save(GoodDto goodDto);
 
-    Good update(Good id);
+    GoodDto update(GoodDto id);
 
     void deleteBy(String id);
 }
