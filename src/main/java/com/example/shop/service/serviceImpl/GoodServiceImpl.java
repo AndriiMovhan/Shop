@@ -1,8 +1,9 @@
-package com.example.shop.service;
+package com.example.shop.service.serviceImpl;
 
 import com.example.shop.dto.GoodDto;
 import com.example.shop.mapper.GoodMapper;
 import com.example.shop.repository.GoodRepository;
+import com.example.shop.service.GoodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,8 +40,8 @@ public class GoodServiceImpl implements GoodService {
 
     @Override
     @Transactional
-    public GoodDto update(GoodDto id) {
-       return goodMapper.toDto(goodRepository.save(goodMapper.toEntity(id)));
+    public GoodDto update(GoodDto goodDto) {
+       return goodMapper.toDto(goodRepository.save(goodMapper.toEntity(goodDto)));
     }
 
     @Override
