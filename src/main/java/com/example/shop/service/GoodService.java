@@ -1,7 +1,6 @@
 package com.example.shop.service;
 
 import com.example.shop.dto.GoodDto;
-import com.example.shop.model.Good;
 
 import java.util.List;
 

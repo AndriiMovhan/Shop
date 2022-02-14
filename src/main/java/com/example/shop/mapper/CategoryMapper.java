@@ -1,7 +1,7 @@
 package com.example.shop.mapper;
 
-import com.example.shop.dto.GoodDto;
-import com.example.shop.model.Good;
+import com.example.shop.dto.CategoryDto;
+import com.example.shop.model.Category;
 import org.mapstruct.Mapper;
 
 import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
@@ -11,11 +11,11 @@ import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
         nullValuePropertyMappingStrategy = IGNORE,
         implementationPackage = "com.example.shop.mapper.impl"
 )
-public abstract class GoodMapper {
+public abstract class CategoryMapper {
 
-    public abstract GoodDto toDto(Good good);
+    public abstract CategoryDto toDto(Category category);
 
-    public abstract Good toEntity(GoodDto goodDto);
+    public abstract Category toEntity(CategoryDto categoryDto);
 
 
 }
