@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -41,8 +40,8 @@ public class GoodServiceImpl implements GoodService {
 
     @Override
     @Transactional
-    public GoodDto update(GoodDto id) {
-       return goodMapper.toDto(goodRepository.save(goodMapper.toEntity(id)));
+    public GoodDto update(GoodDto goodDto) {
+       return goodMapper.toDto(goodRepository.save(goodMapper.toEntity(goodDto)));
     }
 
     @Override

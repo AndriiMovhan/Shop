@@ -1,7 +1,6 @@
 package com.example.shop.rest;
 
 import com.example.shop.dto.GoodDto;
-import com.example.shop.model.Good;
 import com.example.shop.service.GoodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
