@@ -1,7 +1,6 @@
 package com.example.shop.rest;
 
 import com.example.shop.dto.GoodDto;
-import com.example.shop.model.Good;
 import com.example.shop.service.GoodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +26,13 @@ public class GoodController {
     }
 
     @PostMapping("/goods")
-    public ResponseEntity<Good> save(@RequestBody Good good) {
-        return ResponseEntity.ok(goodService.save(good));
+    public ResponseEntity<GoodDto> save(@RequestBody GoodDto goodDto) {
+        return ResponseEntity.ok(goodService.save(goodDto));
     }
 
     @PutMapping("/goods")
-    public ResponseEntity<Good> update(@RequestBody Good good) {
-        return ResponseEntity.ok(goodService.update(good));
+    public ResponseEntity<GoodDto> update(@RequestBody GoodDto goodDto) {
+        return ResponseEntity.ok(goodService.update(goodDto));
     }
 
     @DeleteMapping("/goods/{id}")

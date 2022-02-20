@@ -1,7 +1,6 @@
 package com.example.shop.service;
 
 import com.example.shop.dto.GoodDto;
-import com.example.shop.model.Good;
 
 import java.util.List;
 
@@ -11,9 +10,9 @@ public interface GoodService {
 
     List<GoodDto> findById(String id);
 
-    Good save(Good good);
+    GoodDto save(GoodDto goodDto);
 
-    Good update(Good id);
+    GoodDto update(GoodDto id);
 
     void deleteBy(String id);
 }

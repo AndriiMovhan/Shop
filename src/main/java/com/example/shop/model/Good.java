@@ -12,7 +12,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@Table(schema = "test", name = "good")
+@Table(schema = "public", name = "good")
 public class Good {
 
     @Id
