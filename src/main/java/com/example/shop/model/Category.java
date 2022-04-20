@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import static com.example.shop.repository.CustomIdentityGenerator.CUSTOM_IDENTITY_GENERATOR;
@@ -35,7 +36,8 @@ public class Category {
     @Column(name = "category_name")
     private String name;
 
+    @Builder.Default
     @OneToMany(mappedBy = "category")
-    private Collection<Good> goods;
+    private Collection<Good> goods = new ArrayList<>();
 }
 

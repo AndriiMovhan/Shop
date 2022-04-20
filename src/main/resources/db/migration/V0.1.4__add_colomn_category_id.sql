@@ -1,1 +1,0 @@
-ALTER TABLE public.good ADD COLUMN IF NOT EXISTS category_id INT;

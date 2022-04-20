@@ -26,13 +26,13 @@ public class CategoryController {
     }
 
     @PostMapping("/categories")
-    public ResponseEntity<CategoryDto> save(@RequestBody CategoryDto goodDto) {
-        return ResponseEntity.ok(categoryService.save(goodDto));
+    public ResponseEntity<CategoryDto> save(@RequestBody CategoryDto categoryDto) {
+        return ResponseEntity.ok(categoryService.save(categoryDto));
     }
 
     @PutMapping("/categories")
-    public ResponseEntity<CategoryDto> update(@RequestBody CategoryDto goodDto) {
-        return ResponseEntity.ok(categoryService.update(goodDto));
+    public ResponseEntity<CategoryDto> update(@RequestBody CategoryDto categoryDto) {
+        return ResponseEntity.ok(categoryService.update(categoryDto));
     }
 
     @DeleteMapping("/categories/{id}")

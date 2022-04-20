@@ -30,13 +30,14 @@ public class Good {
     @Column(name = "good_id")
     private Integer id;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     @Column(name = "good_name")
     private String name;
 
     @Column(name = "good_price")
     private Integer price;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
 }

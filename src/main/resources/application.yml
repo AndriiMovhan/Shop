@@ -17,3 +17,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: DEBUG
+    org.springframework.web.filter.CommonsRequestLoggingFilter: INFO

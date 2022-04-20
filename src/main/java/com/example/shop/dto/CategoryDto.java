@@ -1,6 +1,5 @@
 package com.example.shop.dto;
 
-import com.example.shop.model.Good;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,5 +15,5 @@ public class CategoryDto {
 
     private Integer id;
     private String name;
-    private Collection<Good> goods;
+    private Collection<Integer> goodIds;
 }

@@ -12,7 +12,7 @@ public interface GoodService {
 
     GoodDto save(GoodDto goodDto);
 
-    GoodDto update(GoodDto id);
+    GoodDto update(GoodDto goodDto);
 
     void deleteBy(String id);
 }
