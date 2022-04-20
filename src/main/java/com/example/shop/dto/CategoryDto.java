@@ -5,14 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collection;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GoodDto {
+public class CategoryDto {
 
     private Integer id;
-    private Integer categoryId;
     private String name;
-    private Integer price;
+    private Collection<Integer> goodIds;
 }

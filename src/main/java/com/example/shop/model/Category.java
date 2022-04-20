@@ -5,6 +5,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import static com.example.shop.repository.CustomIdentityGenerator.CUSTOM_IDENTITY_GENERATOR;
 import static com.example.shop.repository.CustomIdentityGenerator.CUSTOM_IDENTITY_GENERATOR_FULLY_QUALIFIED_NAME;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -15,8 +18,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@Table(schema = "public", name = "good")
-public class Good {
+@Table(schema = "public", name = "category")
+public class Category {
 
     @Id
     @GenericGenerator(
@@ -27,17 +30,14 @@ public class Good {
             generator = CUSTOM_IDENTITY_GENERATOR,
             strategy = IDENTITY
     )
-    @Column(name = "good_id")
+    @Column(name = "category_id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
-
-    @Column(name = "good_name")
+    @Column(name = "category_name")
     private String name;
 
-    @Column(name = "good_price")
-    private Integer price;
-
+    @Builder.Default
+    @OneToMany(mappedBy = "category")
+    private Collection<Good> goods = new ArrayList<>();
 }
+

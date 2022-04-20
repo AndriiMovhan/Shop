@@ -39,8 +39,4 @@ public class GoodController {
     public void deleteById(@PathVariable String id) {
         goodService.deleteBy(id);
     }
-
-
-
-
 }

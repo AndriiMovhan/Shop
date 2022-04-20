@@ -3,6 +3,7 @@ package com.example.shop.mapper;
 import com.example.shop.dto.GoodDto;
 import com.example.shop.model.Good;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
 
@@ -13,9 +14,11 @@ import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
 )
 public abstract class GoodMapper {
 
-    public abstract GoodDto toDto(Good car);
+    @Mapping(source = "category.id", target = "categoryId")
+    public abstract GoodDto toDto(Good good);
 
-    public abstract Good toEntity(GoodDto car);
+    @Mapping(source = "categoryId", target = "category.id")
+    public abstract Good toEntity(GoodDto goodDto);
 
 
 }
