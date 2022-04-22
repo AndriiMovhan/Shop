@@ -37,7 +37,11 @@ public class Category {
     private String name;
 
     @Builder.Default
-    @OneToMany(mappedBy = "category")
+    @ManyToMany
+    @JoinTable(
+            name = "category_goods",
+            joinColumns = @JoinColumn(name = "category_id"),
+            inverseJoinColumns = @JoinColumn(name = "good_id"))
     private Collection<Good> goods = new ArrayList<>();
 }
 

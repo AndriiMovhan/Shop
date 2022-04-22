@@ -10,7 +10,6 @@ import com.example.shop.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -56,7 +55,12 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     @Transactional
     public CategoryDto update(CategoryDto categoryDto) {
-        return categoryMapper.toDto(categoryRepository.save(categoryMapper.toEntity(categoryDto)));
+        Category entity = categoryMapper.toEntity(categoryDto);
+        List<Good> goods = goodRepository.findAllById(categoryDto.getGoodIds());
+        if (!isEmpty(goods)){
+            entity.setGoods(goods);
+        }
+        return categoryMapper.toDto(categoryRepository.save(entity));
     }
 
     @Override
