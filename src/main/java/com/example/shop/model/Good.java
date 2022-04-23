@@ -41,6 +41,13 @@ public class Good {
     private Integer price;
 
     @Builder.Default
-    @ManyToMany(mappedBy = "goods")
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(
+            name = "category_goods",
+            joinColumns = @JoinColumn(name = "good_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Collection<Category> categories = new ArrayList<>();
 }

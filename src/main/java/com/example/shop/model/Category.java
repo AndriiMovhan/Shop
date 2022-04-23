@@ -37,7 +37,10 @@ public class Category {
     private String name;
 
     @Builder.Default
-    @ManyToMany
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
     @JoinTable(
             name = "category_goods",
             joinColumns = @JoinColumn(name = "category_id"),
